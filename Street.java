@@ -1,5 +1,6 @@
 public class Street{
 
+    //Fields
     private Node from;
     private Node to;
     private double distance;
@@ -8,14 +9,10 @@ public class Street{
     private double travelTime;
     private String name;
     private boolean open = true;
-
-    // 0 = bidirectional
-    // 1 = right only
-    // -1 = left only
-    //     private int direction;
     private int direction;
 
 
+    // Constructor
     public Street(Node from, Node to, double distance, int congestionLevel, int direction, double tollCost, String name){
 
         this.from = from;
@@ -30,12 +27,18 @@ public class Street{
 
     }
 
+    // GETTERS AND SETTERS
     public double getTravelTime(){
         return travelTime;
     }
 
-    public void setOpen(){
-        open = !open;
+    public void setOpen(boolean set){
+        open = set;
+    }
+
+    public void setCongestionLevel(int level){
+        congestionLevel = level;
+        travelTime = distance * congestionLevel;
     }
 
     public boolean isOpen(){

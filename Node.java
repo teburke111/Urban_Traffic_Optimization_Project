@@ -1,12 +1,14 @@
 public class Node {
 
+    //Fields
     private int id;
     private static int num = 1;
 
+    // Used for GUI
     private int x;
     private int y;
 
-
+    //Constructor
     public Node (int x, int y){
         this.id = num++;
         this.x = x;
@@ -17,6 +19,7 @@ public class Node {
         return "Node: " + id;
     }
 
+    // GETTERS
     public int getId(){
         return id;
     }
